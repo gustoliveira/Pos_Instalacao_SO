@@ -1,3 +1,20 @@
+## __RODAR BASH SCRIPT__
+
+* __1:__ Faça o clone deste repostitório:
+    ```{bash}
+      git clone https://github.com/gustoliveira/Pos_Instalacao_SO/blob/master/post_install.sh
+    ```
+* __2:__ Dê permissão de execução para o arquivo post_install.sh:
+    ```{bash}
+      chmod 766 post_install.sh
+    ```
+* __3:__ Execute o arquivo post_install.sh:
+    ```{bash}
+      ./post_install.sh
+    ```
+
+## __PROGRAMAS À INSTALAR__
+
 ### __Editores de Textos e IDEs__
 * Visual Studio code
   * flutter
