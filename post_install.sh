@@ -38,7 +38,7 @@ sudo snap install code --classic &&
 sudo snap install spotify &&
 sudo snap install wps-office-multilang && 
 
-sudo snap install ubuntu-make &&
+sudo snap install ubuntu-make --classic &&
 umake android &&
 umake dart &&
 
