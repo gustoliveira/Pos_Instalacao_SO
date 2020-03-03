@@ -1,10 +1,5 @@
 #!/bin/bash
 
-## Variáveis
-DIRETORIO_DOWNLOADS='/home/$USER/Softwares'
-mkdir '$DIRETORIO_DOWNLOADS'
-
-
 ## REMOVENDO TRAVAS DO APT
 sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock ;
 
@@ -14,7 +9,7 @@ sudo apt update &&
 
 
 ## COMPILADORES E LINGUAGENS
-sudo apt install git gedit curl python3 python3-pip gcc g++ build-essential -y &&
+sudo apt install git gedit curl apt-transport-https python3 python3-pip gcc g++ build-essential -y &&
 
 
 ## DRIVER HP
@@ -26,10 +21,11 @@ sudo apt update &&
 sudo apt install deluge gparted redshift -y &&
 
 
-## CHROME
-wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P "$DIRETORIO_DOWNLOADS" &&
-sudo dpkg -i $DIRETORIO_DOWNLOADS/*.deb
-
+## BRAVE
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list &&
+sudo apt update &&
+sudo apt install brave-browser -y &&
 
 ## SNAP E TODOS OS SEUS PROGRAMAS
 sudo apt install snapd  -y &&
@@ -38,9 +34,6 @@ sudo snap install code --classic &&
 sudo snap install spotify &&
 sudo snap install wps-office-multilang && 
 
-sudo snap install ubuntu-make --classic &&
-umake android &&
-umake dart &&
 
 ## Finalização, atualização e limpeza##
 sudo apt update && sudo apt dist-upgrade && sudo apt full-upgrade -y
