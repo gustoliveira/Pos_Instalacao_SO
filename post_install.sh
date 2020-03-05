@@ -35,6 +35,12 @@ sudo snap install spotify &&
 sudo snap install wps-office-multilang && 
 
 
+# DART
+sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+sudo apt-get install dart
+
+
 ## Finalização, atualização e limpeza##
 sudo apt update && sudo apt dist-upgrade && sudo apt full-upgrade -y
 sudo apt autoclean
